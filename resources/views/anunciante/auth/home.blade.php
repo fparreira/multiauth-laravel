@@ -4,3 +4,4 @@
 
 
 <p><a href="{{ url('anunciante/eventos') }}">eventos</a></p>
+<p><a href="{{ url('anunciante/logout') }}">logout</a></p>

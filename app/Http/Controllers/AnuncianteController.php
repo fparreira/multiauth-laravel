@@ -26,7 +26,7 @@ class AnuncianteController extends Controller
         if (Auth::guard('anunciante')->attempt($credentials)){
             return redirect('anunciante/home');
         }else{
-            return redirect('anunciante');
+            return redirect('anunciante')->withInput();
         }
 
 

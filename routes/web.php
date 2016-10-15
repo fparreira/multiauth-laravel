@@ -23,9 +23,11 @@ Route::group(['prefix' => 'anunciante'], function () {
     Route::post('login', 'AnuncianteController@login');
     Route::get('logout', 'AnuncianteController@logout');
 
-    Route::get('/home', 'AnuncianteController@home');
+    Route::group(['middleware' => 'anunciantesauth'],function(){
+        Route::get('/home', 'AnuncianteController@home');
+        Route::get('/eventos', 'AnuncianteController@eventos');
+    });
 
-    Route::get('/eventos', 'AnuncianteController@eventos');
 
 });
 
